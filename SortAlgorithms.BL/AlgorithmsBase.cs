@@ -18,5 +18,10 @@ namespace SortAlgorithms.BL
                 Items[postitonB] = temp;
             }
         }
+
+        public virtual void Sort()
+        {
+            Items.Sort();
+        }
     }
 }
