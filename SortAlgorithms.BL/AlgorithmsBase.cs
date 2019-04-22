@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SortAlgorithms.BL
 {
-    public class AlgorithmsBase<T>
+    public class AlgorithmsBase<T> where T : IComparable
     {
         public List<T> Items { get; set; } = new List<T>();
-        public void Swap(int positionA, int postitonB)
+        protected void Swap(int positionA, int postitonB)
         {
             if(positionA < Items.Count && postitonB < Items.Count)
             {
@@ -18,7 +18,7 @@ namespace SortAlgorithms.BL
                 Items[postitonB] = temp;
             }
         }
-
+        
         public virtual void Sort()
         {
             Items.Sort();
