@@ -16,7 +16,7 @@ namespace SortAlgorithms.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BuubleSortForm());
+            Application.Run(new MainForm());
         }
     }
 }

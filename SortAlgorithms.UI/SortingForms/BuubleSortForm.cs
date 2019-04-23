@@ -39,11 +39,6 @@ namespace SortAlgorithms.UI
             }
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Button2_Click_1(object sender, EventArgs e)
         {
             richTextBox1.Enabled = true;

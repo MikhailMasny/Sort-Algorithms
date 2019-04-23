@@ -2,8 +2,15 @@
 
 namespace SortAlgorithms.BL
 {
+    /// <summary>
+    /// Пузырьковая сортировка.
+    /// </summary>
+    /// <typeparam name="T">Обобщенный метод сравнения.</typeparam>
     public class BubbleSort<T> : AlgorithmsBase<T> where T : IComparable
     {
+        /// <summary>
+        /// Метод реализации пузырьковой сортировки.
+        /// </summary>
         public override void Sort()
         {
             var count = Items.Count;

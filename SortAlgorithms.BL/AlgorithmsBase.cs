@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace SortAlgorithms.BL
 {
+    /// <summary>
+    /// Базовый класс алгоритмов.
+    /// </summary>
+    /// <typeparam name="T">Обобщенный метод сравнения.</typeparam>
     public class AlgorithmsBase<T> where T : IComparable
     {
+        /// <summary>
+        /// Список значений для сортировки.
+        /// </summary>
         public List<T> Items { get; set; } = new List<T>();
         protected void Swap(int positionA, int postitonB)
         {
@@ -19,6 +26,9 @@ namespace SortAlgorithms.BL
             }
         }
         
+        /// <summary>
+        /// Базовый метод сортировки.
+        /// </summary>
         public virtual void Sort()
         {
             Items.Sort();
