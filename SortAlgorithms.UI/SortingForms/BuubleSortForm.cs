@@ -15,9 +15,10 @@ namespace SortAlgorithms.UI
     {
         AlgorithmsBase<int> algorithmsBase = new BubbleSort<int>();
 
-        public BuubleSortForm()
+        public BuubleSortForm(string rText)
         {
             InitializeComponent();
+            richTextBox1.Text = rText;         
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -29,18 +30,28 @@ namespace SortAlgorithms.UI
                 algorithmsBase.Items.Add(Convert.ToInt32(value));
             }
 
-            richTextBox1.Clear();
-            richTextBox1.Enabled = false;
-            algorithmsBase.Sort();
-
-            foreach (var item in algorithmsBase.Items)
+            if(algorithmsBase.Items.Count != 0)
             {
-                richTextBox1.Text += item + " ";
+                richTextBox1.Clear();
+                richTextBox1.Enabled = false;
+                algorithmsBase.Sort();
+
+                foreach (var item in algorithmsBase.Items)
+                {
+                    richTextBox1.Text += item + " ";
+                }
+
+                button1.Enabled = false;
+            }  
+            else
+            {
+                MessageBox.Show("Список для сортировки пуст!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
+            button1.Enabled = true;
             richTextBox1.Enabled = true;
             richTextBox1.Clear();
             algorithmsBase.Items.Clear();
