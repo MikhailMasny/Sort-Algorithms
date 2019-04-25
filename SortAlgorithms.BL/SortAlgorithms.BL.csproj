@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlgorithmsBase.cs" />
-    <Compile Include="CoctailSort.cs" />
+    <Compile Include="SortingTypes\CoctailSort.cs" />
     <Compile Include="SortingTypes\BubbleSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
