@@ -35,6 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.шейкернаяСортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             // видыСортировокToolStripMenuItem
             // 
             this.видыСортировокToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bubbleSortToolStripMenuItem});
+            this.bubbleSortToolStripMenuItem,
+            this.шейкернаяСортировкаToolStripMenuItem});
             this.видыСортировокToolStripMenuItem.Name = "видыСортировокToolStripMenuItem";
             this.видыСортировокToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.видыСортировокToolStripMenuItem.Text = "Виды сортировок";
@@ -96,6 +98,13 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // шейкернаяСортировкаToolStripMenuItem
+            // 
+            this.шейкернаяСортировкаToolStripMenuItem.Name = "шейкернаяСортировкаToolStripMenuItem";
+            this.шейкернаяСортировкаToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.шейкернаяСортировкаToolStripMenuItem.Text = "Шейкерная сортировка";
+            this.шейкернаяСортировкаToolStripMenuItem.Click += new System.EventHandler(this.ШейкернаяСортировкаToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,5 +136,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem шейкернаяСортировкаToolStripMenuItem;
     }
 }

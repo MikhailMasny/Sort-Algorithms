@@ -13,12 +13,31 @@ namespace SortAlgorithms.UI
 {
     public partial class BuubleSortForm : Form
     {
-        AlgorithmsBase<int> algorithmsBase = new BubbleSort<int>();
+        AlgorithmsBase<int> algorithmsBase;
 
-        public BuubleSortForm(string rText)
+        public BuubleSortForm(string rText, int param)
         {
             InitializeComponent();
-            richTextBox1.Text = rText;         
+            richTextBox1.Text = rText;  
+            
+            switch(param)
+            {
+                case 1:
+                    {
+                        algorithmsBase = new BubbleSort<int>();
+                        this.Text = "Bubble Sort";
+                    }
+                    break;
+
+                case 2:
+                    {
+                        algorithmsBase = new CoctailSort<int>();
+                        this.Text = "Coctail Sort";
+                    }
+                    break;
+
+                default: { } break;
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)

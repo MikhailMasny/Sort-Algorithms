@@ -73,7 +73,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BuubleSortForm";
-            this.Text = "Пузырьковый метод сорт.";
+            this.Text = "FormName";
             this.ResumeLayout(false);
 
         }

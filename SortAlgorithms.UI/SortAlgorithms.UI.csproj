@@ -52,19 +52,19 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SortingForms\BuubleSortForm.cs">
+    <Compile Include="SortingForms\SortForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SortingForms\BuubleSortForm.Designer.cs">
-      <DependentUpon>BuubleSortForm.cs</DependentUpon>
+    <Compile Include="SortingForms\SortForm.Designer.cs">
+      <DependentUpon>SortForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SortingForms\BuubleSortForm.resx">
-      <DependentUpon>BuubleSortForm.cs</DependentUpon>
+    <EmbeddedResource Include="SortingForms\SortForm.resx">
+      <DependentUpon>SortForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

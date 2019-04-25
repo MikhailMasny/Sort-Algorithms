@@ -18,11 +18,25 @@ namespace SortAlgorithms.UI
             InitializeComponent();
         }
 
-        private void BubbleSortToolStripMenuItem_Click(object sender, EventArgs e)
+        #region Открытие определенных видов сортировки
+
+        private void OpenNewForm(int param)
         {
-            var buubleSortForm = new BuubleSortForm(richTextBox1.Text);
+            var buubleSortForm = new BuubleSortForm(richTextBox1.Text, param);
             buubleSortForm.ShowDialog();
         }
+
+        private void BubbleSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenNewForm(1);
+        }
+
+        private void ШейкернаяСортировкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenNewForm(2);
+        }
+
+        #endregion
 
         private void Button2_Click(object sender, EventArgs e)
         {
@@ -70,5 +84,7 @@ namespace SortAlgorithms.UI
                 Console.WriteLine(ex.Message);
             }
         }
+
+        
     }
 }
