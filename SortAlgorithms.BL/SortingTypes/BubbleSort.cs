@@ -11,7 +11,7 @@ namespace SortAlgorithms.BL
         /// <summary>
         /// Метод реализации пузырьковой сортировки.
         /// </summary>
-        public override void Sort()
+        protected override void MakeSort()
         {
             var count = Items.Count;
 
@@ -25,6 +25,8 @@ namespace SortAlgorithms.BL
                     if (a.CompareTo(b) == 1)
                     {
                         Swap(i, i + 1);
+
+                        ComparisonCount++;
                     }
                 }
             }
