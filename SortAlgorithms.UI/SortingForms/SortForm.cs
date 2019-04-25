@@ -53,7 +53,7 @@ namespace SortAlgorithms.UI
             {
                 richTextBox1.Clear();
                 richTextBox1.Enabled = false;
-                algorithmsBase.Sort();
+                var timeSpan = algorithmsBase.Sort();
 
                 foreach (var item in algorithmsBase.Items)
                 {
@@ -61,6 +61,8 @@ namespace SortAlgorithms.UI
                 }
 
                 button1.Enabled = false;
+
+                MessageBox.Show($"Swap count: {algorithmsBase.SwapCount}, Time: {timeSpan}", "Result of sorting", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }  
             else
             {
