@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B85E7507-5034-49D1-A0D0-A836509B47E8}</ProjectGuid>
+    <ProjectGuid>{B4A5CA3A-C9E8-4517-8CB0-D4981A7137F6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SortAlgorithms.BLTests</RootNamespace>
-    <AssemblyName>SortAlgorithms.BLTests</AssemblyName>
+    <RootNamespace>SortAlgorithms.BLTests1</RootNamespace>
+    <AssemblyName>SortAlgorithms.BLTests1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -56,7 +56,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="BubbleSortTests.cs" />
     <Compile Include="CoctailSortTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
