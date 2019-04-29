@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SortAlgorithms.UI
 {
@@ -46,6 +47,10 @@ namespace SortAlgorithms.UI
         private void Button2_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
+            chart1.Series.Clear();
+
+            button2.Enabled = true;
+            button3.Enabled = false;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -78,6 +83,9 @@ namespace SortAlgorithms.UI
                 {
                     richTextBox1.Text = fileContent;
                     MessageBox.Show("Файл успешно считан!", "Результат операции", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    button1.Enabled = false;
+                    button3.Enabled = true;
                 }
                 else
                 {
@@ -90,6 +98,28 @@ namespace SortAlgorithms.UI
             }
         }
 
-        
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            button3.Enabled = false;
+
+            // TODO: Добавить асинхронность каждого метода сортировки
+
+            // TODO: Реализовать через Dictionary
+            string[] seriesArray = { "Bubble", "Coctail", "Insert" }; // TODO: список алгоритмов
+            int[] pointsArray = { 1, 2, 3 }; // TODO: значения от сортировок
+
+            chart1.Palette = ChartColorPalette.SeaGreen;
+
+            for (int i = 0; i < seriesArray.Length; i++)
+            {
+                Series series = chart1.Series.Add(seriesArray[i]);
+                series.Points.Add(pointsArray[i]);
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
