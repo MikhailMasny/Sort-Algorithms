@@ -36,6 +36,11 @@ namespace SortAlgorithms.UI
             OpenNewForm(2);
         }
 
+        private void InsertionSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenNewForm(3);
+        }
+
         #endregion
 
         private void Button2_Click(object sender, EventArgs e)

@@ -36,6 +36,13 @@ namespace SortAlgorithms.UI
                     }
                     break;
 
+                case 3:
+                    {
+                        algorithmsBase = new InsertSort<int>();
+                        this.Text = "Insertion Sort";
+                    }
+                    break;
+
                 default: { } break;
             }
         }

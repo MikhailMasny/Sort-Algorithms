@@ -31,11 +31,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.видыСортировокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bubbleSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.шейкернаяСортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.шейкернаяСортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertionSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             // 
             this.видыСортировокToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bubbleSortToolStripMenuItem,
-            this.шейкернаяСортировкаToolStripMenuItem});
+            this.шейкернаяСортировкаToolStripMenuItem,
+            this.insertionSortToolStripMenuItem});
             this.видыСортировокToolStripMenuItem.Name = "видыСортировокToolStripMenuItem";
             this.видыСортировокToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.видыСортировокToolStripMenuItem.Text = "Виды сортировок";
@@ -64,6 +66,13 @@
             this.bubbleSortToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.bubbleSortToolStripMenuItem.Text = "Пузырьковая сортировка";
             this.bubbleSortToolStripMenuItem.Click += new System.EventHandler(this.BubbleSortToolStripMenuItem_Click);
+            // 
+            // шейкернаяСортировкаToolStripMenuItem
+            // 
+            this.шейкернаяСортировкаToolStripMenuItem.Name = "шейкернаяСортировкаToolStripMenuItem";
+            this.шейкернаяСортировкаToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.шейкернаяСортировкаToolStripMenuItem.Text = "Шейкерная сортировка";
+            this.шейкернаяСортировкаToolStripMenuItem.Click += new System.EventHandler(this.ШейкернаяСортировкаToolStripMenuItem_Click);
             // 
             // richTextBox1
             // 
@@ -98,12 +107,12 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // шейкернаяСортировкаToolStripMenuItem
+            // insertionSortToolStripMenuItem
             // 
-            this.шейкернаяСортировкаToolStripMenuItem.Name = "шейкернаяСортировкаToolStripMenuItem";
-            this.шейкернаяСортировкаToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.шейкернаяСортировкаToolStripMenuItem.Text = "Шейкерная сортировка";
-            this.шейкернаяСортировкаToolStripMenuItem.Click += new System.EventHandler(this.ШейкернаяСортировкаToolStripMenuItem_Click);
+            this.insertionSortToolStripMenuItem.Name = "insertionSortToolStripMenuItem";
+            this.insertionSortToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.insertionSortToolStripMenuItem.Text = "Сортировка вставками";
+            this.insertionSortToolStripMenuItem.Click += new System.EventHandler(this.InsertionSortToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -137,5 +146,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem шейкернаяСортировкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem insertionSortToolStripMenuItem;
     }
 }
