@@ -59,7 +59,7 @@ namespace SortAlgorithms.UI
             if(algorithmsBase.Items.Count != 0)
             {
                 richTextBox1.Clear();
-                richTextBox1.Enabled = false;
+                richTextBox1.ReadOnly = true;
                 var timeSpan = algorithmsBase.Sort();
 
                 foreach (var item in algorithmsBase.Items)
@@ -80,7 +80,7 @@ namespace SortAlgorithms.UI
         private void Button2_Click_1(object sender, EventArgs e)
         {
             button1.Enabled = true;
-            richTextBox1.Enabled = true;
+            richTextBox1.ReadOnly = false;
             richTextBox1.Clear();
             algorithmsBase.Items.Clear();
         }

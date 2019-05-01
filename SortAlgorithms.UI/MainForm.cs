@@ -1,11 +1,8 @@
-﻿using System;
+﻿using SortAlgorithms.BL;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -47,10 +44,11 @@ namespace SortAlgorithms.UI
         private void Button2_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
+            richTextBox2.Clear();
             chart1.Series.Clear();
 
-            button2.Enabled = true;
             button3.Enabled = false;
+            button1.Enabled = true;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -98,15 +96,68 @@ namespace SortAlgorithms.UI
             }
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        
+        // TODO: Рефракторинг + в публичный
+        private void richTextBoxParser(List<int> Items)
         {
+            string[] words = richTextBox1.Text.Split(' ');
+            foreach (var w in words)
+            {
+                if (int.TryParse(w, out int value))
+                {
+                    Items.Add(Convert.ToInt32(value));
+                }
+            }
+        }
+        private void AnalysisAlgorithm(AlgorithmsBase<int> algorithmsBase, List<int> Items, List<TimeSpan> timeSpan, List<int> swapCount)
+        {
+            algorithmsBase.Items.AddRange(Items);
+            timeSpan.Add(algorithmsBase.Sort());
+            swapCount.Add(algorithmsBase.SwapCount);
+            algorithmsBase.Items.Clear();
+        }
+        private void chartDefaultSettings(int AxisXMax, int AxisYMax)
+        {
+            chart1.ChartAreas[0].AxisX.Minimum = 0;
+            chart1.ChartAreas[0].AxisX.Maximum = AxisXMax;
+            chart1.ChartAreas[0].AxisY.Minimum = 0; 
+            chart1.ChartAreas[0].AxisY.Maximum = AxisYMax;
+        }
+        private void richTextBoxFill(string algorithmName, TimeSpan timeSpan, int swapCount)
+        {
+            richTextBox2.Text += algorithmName + "\n";
+            richTextBox2.Text += $"Время: {timeSpan} \n";
+            richTextBox2.Text += $"Количество замен: {swapCount} \n";
+            richTextBox2.Text += $"\n";
+        }
+
+        private async void Button3_Click(object sender, EventArgs e)
+        { 
+            AlgorithmsBase<int> algorithmsBase = null;
+            List<int> Items = new List<int>();
+            List<TimeSpan> timeSpan = new List<TimeSpan>();
+            List<int> swapCount = new List<int>();
+
+            richTextBoxParser(Items);
+
+            algorithmsBase = new BubbleSort<int>();
+            await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
+            richTextBoxFill("Bubble sort", timeSpan[0], swapCount[0]);
+
+            algorithmsBase = new CoctailSort<int>();
+            await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
+            richTextBoxFill("Coctail sort", timeSpan[1], swapCount[1]);
+
+            algorithmsBase = new InsertSort<int>();
+            await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
+            richTextBoxFill("Insert sort", timeSpan[2], swapCount[2]);
+
             button3.Enabled = false;
 
-            // TODO: Добавить асинхронность каждого метода сортировки
+            chartDefaultSettings(swapCount.Count, swapCount.Max());
 
-            // TODO: Реализовать через Dictionary
             string[] seriesArray = { "Bubble", "Coctail", "Insert" }; // TODO: список алгоритмов
-            int[] pointsArray = { 1, 2, 3 }; // TODO: значения от сортировок
+            int[] pointsArray = { swapCount[0], swapCount[1], swapCount[2] }; // TODO: значения от сортировок
 
             chart1.Palette = ChartColorPalette.SeaGreen;
 
