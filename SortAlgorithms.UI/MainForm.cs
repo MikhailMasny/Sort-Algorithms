@@ -142,15 +142,27 @@ namespace SortAlgorithms.UI
 
             algorithmsBase = new BubbleSort<int>();
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
-            richTextBoxFill("Bubble sort", timeSpan[0], swapCount[0]);
+            await Task.Run(() => richTextBox2.Invoke((Action)delegate
+            {
+                richTextBoxFill("Bubble sort", timeSpan[0], swapCount[0]);
+            }
+            ));
 
             algorithmsBase = new CoctailSort<int>();
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
-            richTextBoxFill("Coctail sort", timeSpan[1], swapCount[1]);
+            await Task.Run(() => richTextBox2.Invoke((Action)delegate
+            {
+                richTextBoxFill("Coctail sort", timeSpan[1], swapCount[1]);
+            }
+            ));
 
             algorithmsBase = new InsertSort<int>();
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
-            richTextBoxFill("Insert sort", timeSpan[2], swapCount[2]);
+            await Task.Run(() => richTextBox2.Invoke((Action)delegate
+            {
+                richTextBoxFill("Insert sort", timeSpan[2], swapCount[2]);
+            }
+            ));     
 
             button3.Enabled = false;
 
@@ -158,8 +170,6 @@ namespace SortAlgorithms.UI
 
             string[] seriesArray = { "Bubble", "Coctail", "Insert" }; // TODO: список алгоритмов
             int[] pointsArray = { swapCount[0], swapCount[1], swapCount[2] }; // TODO: значения от сортировок
-
-            chart1.Palette = ChartColorPalette.SeaGreen;
 
             for (int i = 0; i < seriesArray.Length; i++)
             {
