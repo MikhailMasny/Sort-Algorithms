@@ -27,6 +27,24 @@ namespace SortAlgorithms.BL.Tests
         }
 
         [TestMethod()]
+        public void BaseSortTest()
+        {
+            // Arrange
+            var base_sort = new AlgorithmsBase<int>();
+
+            base_sort.Items.AddRange(Items);
+
+            // Act
+            base_sort.Sort();
+
+            // Assest
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], base_sort.Items[i]);
+            }
+        }
+
+        [TestMethod()]
         public void BubbleSortTest()
         {
             // Arrange
@@ -77,6 +95,24 @@ namespace SortAlgorithms.BL.Tests
             for (int i = 0; i < Items.Count; i++)
             {
                 Assert.AreEqual(Sorted[i], insert.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void ShellSortTest()
+        {
+            // Arrange
+            var shell = new ShellSort<int>();
+
+            shell.Items.AddRange(Items);
+
+            // Act
+            shell.Sort();
+
+            // Assest
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], shell.Items[i]);
             }
         }
     }

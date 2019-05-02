@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SortAlgorithms.BL
 {
-    class ShellSort<T> : AlgorithmsBase<T> where T : IComparable
+    public class ShellSort<T> : AlgorithmsBase<T> where T : IComparable
     {
         protected override void MakeSort()
         {
