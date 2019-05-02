@@ -43,6 +43,13 @@ namespace SortAlgorithms.UI
                     }
                     break;
 
+                case 4:
+                    {
+                        algorithmsBase = new ShellSort<int>();
+                        this.Text = "Shell Sort";
+                    }
+                    break;
+
                 default: { } break;
             }
         }

@@ -6,7 +6,6 @@ using System.Windows.Forms;
 
 // TODO LIST
 // Добавить локализацию
-// Добавить общую страницу
 
 namespace SortAlgorithms.UI
 {
