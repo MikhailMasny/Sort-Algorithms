@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlgorithmsBase.cs" />
+    <Compile Include="SortingTypes\ShellSort.cs" />
     <Compile Include="SortingTypes\InsertSort.cs" />
     <Compile Include="SortingTypes\CoctailSort.cs" />
     <Compile Include="SortingTypes\BubbleSort.cs" />
