@@ -1,19 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortAlgorithms.BL.DataStructures
 {
+    /// <summary>
+    /// Двоичное дерево.
+    /// </summary>
+    /// <typeparam name="T">Обобщение.</typeparam>
     class Tree<T>
         where T : IComparable
     {
+        /// <summary>
+        /// Главный узел.
+        /// </summary>
         public Node<T> Root { get; private set; }
+
+        /// <summary>
+        /// Количество элементов.
+        /// </summary>
         public int Count { get; private set; }
 
+        /// <summary>
+        /// Пустой конструктор.
+        /// </summary>
         public Tree() { }
 
+        /// <summary>
+        /// Конструтор с заполнением данными.
+        /// </summary>
+        /// <param name="items">Элементы.</param>
         public Tree(IEnumerable<T> items)
         {
             foreach (var item in items)
@@ -22,6 +37,10 @@ namespace SortAlgorithms.BL.DataStructures
             }
         }
 
+        /// <summary>
+        /// Добавление нового элемента.
+        /// </summary>
+        /// <param name="data">Данные.</param>
         public void Add(T data)
         {
             if (Root == null)

@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortAlgorithms.BL
 {
+    /// <summary>
+    /// Сортировка Шелла.
+    /// </summary>
+    /// <typeparam name="T">Обобщение.</typeparam>
     public class ShellSort<T> : AlgorithmsBase<T> where T : IComparable
     {
+        /// <summary>
+        /// Метод реализации сортировки Шелла.
+        /// </summary>
         protected override void MakeSort()
         {
             var step = Items.Count / 2;

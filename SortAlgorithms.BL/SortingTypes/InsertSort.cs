@@ -2,8 +2,15 @@
 
 namespace SortAlgorithms.BL
 {
+    /// <summary>
+    /// Сортировка вставками.
+    /// </summary>
+    /// <typeparam name="T">Обобщение.</typeparam>
     public class InsertSort<T> : AlgorithmsBase<T> where T : IComparable
     {
+        /// <summary>
+        /// Метод реализации сортировки вставками.
+        /// </summary>
         protected override void MakeSort()
         {
             for(int i = 1; i< Items.Count; i++)

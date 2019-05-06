@@ -3,11 +3,23 @@ using System.Collections.Generic;
 
 namespace SortAlgorithms.BL.DataStructures
 {
+    /// <summary>
+    /// Двоичная куча.
+    /// </summary>
+    /// <typeparam name="T">Обобщение.</typeparam>
     class Heap<T> where T : IComparable
     {
         private List<T> items = new List<T>();
-        public int Count => items.Count;
 
+        /// <summary>
+        /// Количество элементов.
+        /// </summary>
+        public int Count => items.Count;
+        
+        /// <summary>
+        /// Получение элемента.
+        /// </summary>
+        /// <returns>Элемент.</returns>
         public T Peek()
         {
             if (Count > 0)
@@ -20,8 +32,15 @@ namespace SortAlgorithms.BL.DataStructures
             }
         }
 
+        /// <summary>
+        /// Пустой конструтор.
+        /// </summary>
         public Heap() { }
 
+        /// <summary>
+        /// Конструтор с заполнением данными.
+        /// </summary>
+        /// <param name="items">Элементы.</param>
         public Heap(IEnumerable<T> items)
         {
             this.items.AddRange(items);
@@ -31,7 +50,10 @@ namespace SortAlgorithms.BL.DataStructures
             }
         }
 
-
+        /// <summary>
+        /// Добавление нового элемента.
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(T item)
         {
             items.Add(item);
@@ -48,6 +70,10 @@ namespace SortAlgorithms.BL.DataStructures
             }
         }
 
+        /// <summary>
+        /// Получение макс. элем.
+        /// </summary>
+        /// <returns>Максимальный элем.</returns>
         public T GetMax()
         {
             var result = items[0];

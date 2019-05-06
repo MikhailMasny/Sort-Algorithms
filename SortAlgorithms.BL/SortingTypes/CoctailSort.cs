@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortAlgorithms.BL
 {
     /// <summary>
     /// Шейкерная сортировка.
     /// </summary>
-    /// <typeparam name="T">Обобщенный метод сравнения.</typeparam>
+    /// <typeparam name="T">Обобщение.</typeparam>
     public class CoctailSort<T> : AlgorithmsBase<T> where T: IComparable
     {
         /// <summary>
-        /// Метод реализации шейкерная сортировки.
+        /// Метод реализации шейкерной сортировки.
         /// </summary>
         protected override void MakeSort()
         {

@@ -5,7 +5,7 @@ namespace SortAlgorithms.BL
     /// <summary>
     /// Пузырьковая сортировка.
     /// </summary>
-    /// <typeparam name="T">Обобщенный метод сравнения.</typeparam>
+    /// <typeparam name="T">Обобщение.</typeparam>
     public class BubbleSort<T> : AlgorithmsBase<T> where T : IComparable
     {
         /// <summary>
