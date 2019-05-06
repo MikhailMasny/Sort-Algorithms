@@ -42,11 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlgorithmsBase.cs" />
+    <Compile Include="DataStructures\Heap.cs" />
+    <Compile Include="DataStructures\Node.cs" />
+    <Compile Include="DataStructures\Tree.cs" />
+    <Compile Include="HeapSort.cs" />
     <Compile Include="SortingTypes\ShellSort.cs" />
     <Compile Include="SortingTypes\InsertSort.cs" />
     <Compile Include="SortingTypes\CoctailSort.cs" />
     <Compile Include="SortingTypes\BubbleSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeSort.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
