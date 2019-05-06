@@ -44,6 +44,16 @@ namespace SortAlgorithms.UI
             OpenNewForm(4);
         }
 
+        private void HeapSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenNewForm(5);
+        }
+
+        private void TreeSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenNewForm(6);
+        }
+
         #endregion
 
         private void Button2_Click(object sender, EventArgs e)
@@ -177,12 +187,29 @@ namespace SortAlgorithms.UI
             }
             ));
 
+            // TODO: Добавить swapCount для Heap и Tree сортировок.
+            algorithmsBase = new HeapSort<int>();
+            await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
+            await Task.Run(() => richTextBox2.Invoke((Action)delegate
+            {
+                richTextBoxFill("Heap sort", timeSpan[4], swapCount[4]);
+            }
+            ));
+
+            algorithmsBase = new TreeSort<int>();
+            await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
+            await Task.Run(() => richTextBox2.Invoke((Action)delegate
+            {
+                richTextBoxFill("Tree sort", timeSpan[5], swapCount[5]);
+            }
+            ));
+
             button3.Enabled = false;
 
             chartDefaultSettings(swapCount.Count, swapCount.Max());
 
-            string[] seriesArray = { "Bubble", "Coctail", "Insert", "Shell" }; // TODO: список алгоритмов
-            int[] pointsArray = { swapCount[0], swapCount[1], swapCount[2], swapCount[3] }; // TODO: значения от сортировок
+            string[] seriesArray = { "Bubble", "Coctail", "Insert", "Shell", "Heap", "Tree" }; // TODO: список алгоритмов
+            int[] pointsArray = { swapCount[0], swapCount[1], swapCount[2], swapCount[3], swapCount[4], swapCount[5] }; // TODO: значения от сортировок
 
             for (int i = 0; i < seriesArray.Length; i++)
             {
@@ -194,6 +221,6 @@ namespace SortAlgorithms.UI
         private void MainForm_Load(object sender, EventArgs e)
         {
 
-        }   
+        }      
     }
 }

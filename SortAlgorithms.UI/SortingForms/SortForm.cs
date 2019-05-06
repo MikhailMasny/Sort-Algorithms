@@ -50,6 +50,20 @@ namespace SortAlgorithms.UI
                     }
                     break;
 
+                case 5:
+                    {
+                        algorithmsBase = new HeapSort<int>();
+                        this.Text = "Heap Sort";
+                    }
+                    break;
+
+                case 6:
+                    {
+                        algorithmsBase = new TreeSort<int>();
+                        this.Text = "Tree Sort";
+                    }
+                    break;
+
                 default: { } break;
             }
         }
