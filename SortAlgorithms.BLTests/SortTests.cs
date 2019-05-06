@@ -115,5 +115,41 @@ namespace SortAlgorithms.BL.Tests
                 Assert.AreEqual(Sorted[i], shell.Items[i]);
             }
         }
+
+        [TestMethod()]
+        public void TreeSortTest()
+        {
+            // Arrange
+            var tree = new TreeSort<int>();
+
+            tree.Items.AddRange(Items);
+
+            // Act
+            tree.Sort();
+
+            // Assest
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], tree.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void HeapSortTest()
+        {
+            // Arrange
+            var heap = new HeapSort<int>();
+
+            heap.Items.AddRange(Items);
+
+            // Act
+            heap.Sort();
+
+            // Assest
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], heap.Items[i]);
+            }
+        }
     }
 }
