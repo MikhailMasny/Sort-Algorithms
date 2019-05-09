@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortAlgorithms.BL
 {
@@ -13,8 +10,29 @@ namespace SortAlgorithms.BL
     /// <typeparam name="T">Обобщенный метод сравнения.</typeparam>
     public class AlgorithmsBase<T> where T : IComparable
     {
+        /// <summary>
+        /// Количество замен.
+        /// </summary>
         public int SwapCount { get; protected set; } = 0;
+
+        /// <summary>
+        /// Количество сравнений.
+        /// </summary>
         public int ComparisonCount { get; protected set; } = 0;
+
+        /// <summary>
+        /// Конструктор с добавлением элементов.
+        /// </summary>
+        /// <param name="items">"Элементы.</param>
+        public AlgorithmsBase(IEnumerable<T> items)
+        {
+            Items.AddRange(items);
+        }
+
+        /// <summary>
+        /// Пустой конструктор.
+        /// </summary>
+        public AlgorithmsBase() { }
 
         /// <summary>
         /// Список значений для сортировки.

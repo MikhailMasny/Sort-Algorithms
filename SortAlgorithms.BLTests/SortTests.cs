@@ -151,5 +151,23 @@ namespace SortAlgorithms.BL.Tests
                 Assert.AreEqual(Sorted[i], heap.Items[i]);
             }
         }
+
+        [TestMethod()]
+        public void SelectionSortTest()
+        {
+            // Arrange
+            var selection = new SelectionSort<int>();
+
+            selection.Items.AddRange(Items);
+
+            // Act
+            selection.Sort();
+
+            // Assest
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], selection.Items[i]);
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SortAlgorithms.BL
 {
@@ -8,6 +9,17 @@ namespace SortAlgorithms.BL
     /// <typeparam name="T">Обобщение.</typeparam>
     public class BubbleSort<T> : AlgorithmsBase<T> where T : IComparable
     {
+        /// <summary>
+        /// Конструктор с добавлением элементов.
+        /// </summary>
+        /// <param name="items">Элементы.</param>
+        public BubbleSort(IEnumerable<T> items) : base(items) { }
+
+        /// <summary>
+        /// Пустой конструктор.
+        /// </summary>
+        public BubbleSort() { }
+
         /// <summary>
         /// Метод реализации пузырьковой сортировки.
         /// </summary>
