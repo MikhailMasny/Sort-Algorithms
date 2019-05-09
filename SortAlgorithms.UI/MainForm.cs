@@ -69,6 +69,7 @@ namespace SortAlgorithms.UI
 
             button3.Enabled = false;
             button1.Enabled = true;
+            button4.Enabled = true;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -103,6 +104,7 @@ namespace SortAlgorithms.UI
                     MessageBox.Show("Файл успешно считан!", "Результат операции", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     button1.Enabled = false;
+                    button4.Enabled = false;
                     button3.Enabled = true;
                 }
                 else
@@ -116,7 +118,28 @@ namespace SortAlgorithms.UI
             }
         }
 
-        
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            var rnd = new Random();
+            var list = new List<int>();
+            var countItems = rnd.Next(0, 500);
+            
+            for(int i = 0; i < countItems; i++)
+            {
+                list.Add(rnd.Next(0,10000));
+            }
+
+            foreach(var l in list)
+            {
+                richTextBox1.Text += l.ToString() + " ";
+            }
+
+            button1.Enabled = false;
+            button4.Enabled = false;
+            button3.Enabled = true;
+        }
+
+
         // TODO: Рефракторинг + в публичный
         private void richTextBoxParser(List<int> Items)
         {
@@ -280,8 +303,6 @@ namespace SortAlgorithms.UI
         private void MainForm_Load(object sender, EventArgs e)
         {
 
-        }
-
-        
+        } 
     }
 }
