@@ -151,6 +151,46 @@ namespace SortAlgorithms.UI
             richTextBox2.Text += $"\n";
         }
 
+        // { "Bubble", "Coctail", "Insert", "Shell", "Heap", "Tree", "Selection" }
+        // { swapCount[0], swapCount[1], swapCount[2], swapCount[3], swapCount[4], swapCount[5], swapCount[6] }
+        private void checkBoxCheckedAll(ref int countSeries, string[] seriesArray, int[] pointsArray, List<int> swapCount)
+        {
+            if (checkBox1.Checked)
+            {
+                seriesArray[0] = "Bubble";
+                pointsArray[0] = swapCount[0];
+                countSeries++;
+            }
+
+            if (checkBox2.Checked)
+            {
+                seriesArray[1] = "Coctail";
+                pointsArray[1] = swapCount[1];
+                countSeries++;
+            }
+
+            if (checkBox3.Checked)
+            {
+                seriesArray[2] = "Insert";
+                pointsArray[2] = swapCount[2];
+                countSeries++;
+            }
+
+            if (checkBox4.Checked)
+            {
+                seriesArray[3] = "Shell";
+                pointsArray[3] = swapCount[3];
+                countSeries++;
+            }
+
+            if (checkBox5.Checked)
+            {
+                seriesArray[4] = "Selection";
+                pointsArray[4] = swapCount[6];
+                countSeries++;
+            }
+        }
+
         private async void Button3_Click(object sender, EventArgs e)
         { 
             AlgorithmsBase<int> algorithmsBase = null;
@@ -217,18 +257,24 @@ namespace SortAlgorithms.UI
             }
             ));
 
-            button3.Enabled = false;
+            button3.Enabled = false;  
 
-            chartDefaultSettings(swapCount.Count, swapCount.Max());
+            string[] seriesArray = new string[10]; // TODO: список алгоритмов
+            int[] pointsArray = new int[10]; // TODO: значения от сортировок
 
-            string[] seriesArray = { "Bubble", "Coctail", "Insert", "Shell", "Heap", "Tree", "Selection" }; // TODO: список алгоритмов
-            int[] pointsArray = { swapCount[0], swapCount[1], swapCount[2], swapCount[3], swapCount[4], swapCount[5], swapCount[6] }; // TODO: значения от сортировок
+            chart1.Series.Clear();
+            var countSeries = 0;
+            checkBoxCheckedAll(ref countSeries, seriesArray, pointsArray, swapCount);
+            chartDefaultSettings(countSeries, pointsArray.Max());
 
             for (int i = 0; i < seriesArray.Length; i++)
             {
-                Series series = chart1.Series.Add(seriesArray[i]);
-                series.Points.Add(pointsArray[i]);
-            }
+                if (seriesArray[i] != null)
+                {
+                    Series series = chart1.Series.Add(seriesArray[i]);
+                    series.Points.Add(pointsArray[i]);
+                }
+            }    
         }
 
         private void MainForm_Load(object sender, EventArgs e)
