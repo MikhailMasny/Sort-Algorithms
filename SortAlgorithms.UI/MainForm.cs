@@ -54,6 +54,11 @@ namespace SortAlgorithms.UI
             OpenNewForm(6);
         }
 
+        private void SelectionSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenNewForm(7);
+        }
+
         #endregion
 
         private void Button2_Click(object sender, EventArgs e)
@@ -204,12 +209,20 @@ namespace SortAlgorithms.UI
             }
             ));
 
+            algorithmsBase = new SelectionSort<int>();
+            await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
+            await Task.Run(() => richTextBox2.Invoke((Action)delegate
+            {
+                richTextBoxFill("Selection sort", timeSpan[6], swapCount[6]);
+            }
+            ));
+
             button3.Enabled = false;
 
             chartDefaultSettings(swapCount.Count, swapCount.Max());
 
-            string[] seriesArray = { "Bubble", "Coctail", "Insert", "Shell", "Heap", "Tree" }; // TODO: список алгоритмов
-            int[] pointsArray = { swapCount[0], swapCount[1], swapCount[2], swapCount[3], swapCount[4], swapCount[5] }; // TODO: значения от сортировок
+            string[] seriesArray = { "Bubble", "Coctail", "Insert", "Shell", "Heap", "Tree", "Selection" }; // TODO: список алгоритмов
+            int[] pointsArray = { swapCount[0], swapCount[1], swapCount[2], swapCount[3], swapCount[4], swapCount[5], swapCount[6] }; // TODO: значения от сортировок
 
             for (int i = 0; i < seriesArray.Length; i++)
             {
@@ -221,6 +234,8 @@ namespace SortAlgorithms.UI
         private void MainForm_Load(object sender, EventArgs e)
         {
 
-        }      
+        }
+
+        
     }
 }

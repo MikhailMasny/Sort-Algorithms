@@ -1,12 +1,5 @@
 ﻿using SortAlgorithms.BL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SortAlgorithms.UI
@@ -64,6 +57,13 @@ namespace SortAlgorithms.UI
                     }
                     break;
 
+                case 7:
+                    {
+                        algorithmsBase = new SelectionSort<int>();
+                        this.Text = "Selection Sort";
+                    }
+                    break;
+
                 default: { } break;
             }
         }
@@ -94,7 +94,7 @@ namespace SortAlgorithms.UI
             }  
             else
             {
-                MessageBox.Show("Список для сортировки пуст!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("List to sort is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.видыСортировокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bubbleSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.шейкернаяСортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insertionSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shellSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.heapSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.treeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,9 +53,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.selectionSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.heapSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -81,7 +82,8 @@
             this.insertionSortToolStripMenuItem,
             this.shellSortToolStripMenuItem,
             this.heapSortToolStripMenuItem,
-            this.treeSortToolStripMenuItem});
+            this.treeSortToolStripMenuItem,
+            this.selectionSortToolStripMenuItem});
             this.видыСортировокToolStripMenuItem.Name = "видыСортировокToolStripMenuItem";
             this.видыСортировокToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.видыСортировокToolStripMenuItem.Text = "Виды сортировок";
@@ -89,30 +91,44 @@
             // bubbleSortToolStripMenuItem
             // 
             this.bubbleSortToolStripMenuItem.Name = "bubbleSortToolStripMenuItem";
-            this.bubbleSortToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.bubbleSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.bubbleSortToolStripMenuItem.Text = "Пузырьковая сортировка";
             this.bubbleSortToolStripMenuItem.Click += new System.EventHandler(this.BubbleSortToolStripMenuItem_Click);
             // 
             // шейкернаяСортировкаToolStripMenuItem
             // 
             this.шейкернаяСортировкаToolStripMenuItem.Name = "шейкернаяСортировкаToolStripMenuItem";
-            this.шейкернаяСортировкаToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.шейкернаяСортировкаToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.шейкернаяСортировкаToolStripMenuItem.Text = "Шейкерная сортировка";
             this.шейкернаяСортировкаToolStripMenuItem.Click += new System.EventHandler(this.ШейкернаяСортировкаToolStripMenuItem_Click);
             // 
             // insertionSortToolStripMenuItem
             // 
             this.insertionSortToolStripMenuItem.Name = "insertionSortToolStripMenuItem";
-            this.insertionSortToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.insertionSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.insertionSortToolStripMenuItem.Text = "Сортировка вставками";
             this.insertionSortToolStripMenuItem.Click += new System.EventHandler(this.InsertionSortToolStripMenuItem_Click);
             // 
             // shellSortToolStripMenuItem
             // 
             this.shellSortToolStripMenuItem.Name = "shellSortToolStripMenuItem";
-            this.shellSortToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.shellSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.shellSortToolStripMenuItem.Text = "Сортировка Шелла";
             this.shellSortToolStripMenuItem.Click += new System.EventHandler(this.ShellSortToolStripMenuItem_Click);
+            // 
+            // heapSortToolStripMenuItem
+            // 
+            this.heapSortToolStripMenuItem.Name = "heapSortToolStripMenuItem";
+            this.heapSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.heapSortToolStripMenuItem.Text = "Сортировка кучей";
+            this.heapSortToolStripMenuItem.Click += new System.EventHandler(this.HeapSortToolStripMenuItem_Click);
+            // 
+            // treeSortToolStripMenuItem
+            // 
+            this.treeSortToolStripMenuItem.Name = "treeSortToolStripMenuItem";
+            this.treeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.treeSortToolStripMenuItem.Text = "Сортировка бинарным деревом";
+            this.treeSortToolStripMenuItem.Click += new System.EventHandler(this.TreeSortToolStripMenuItem_Click);
             // 
             // richTextBox1
             // 
@@ -149,18 +165,18 @@
             // 
             // chart1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(6, 19);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(348, 173);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
-            title5.Name = "Title1";
-            title5.Text = "Количество замен при использовании алгоритмов";
-            this.chart1.Titles.Add(title5);
+            title3.Name = "Title1";
+            title3.Text = "Количество замен при использовании алгоритмов";
+            this.chart1.Titles.Add(title3);
             // 
             // button3
             // 
@@ -225,34 +241,27 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Диаграмма";
             // 
+            // selectionSortToolStripMenuItem
+            // 
+            this.selectionSortToolStripMenuItem.Name = "selectionSortToolStripMenuItem";
+            this.selectionSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.selectionSortToolStripMenuItem.Text = "Сортировка выбором";
+            this.selectionSortToolStripMenuItem.Click += new System.EventHandler(this.SelectionSortToolStripMenuItem_Click);
+            // 
             // chart2
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart2.Legends.Add(legend6);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(6, 19);
             this.chart2.Name = "chart2";
             this.chart2.Size = new System.Drawing.Size(152, 139);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart2";
-            title6.Name = "Title1";
-            title6.Text = "Время работы";
-            this.chart2.Titles.Add(title6);
-            // 
-            // heapSortToolStripMenuItem
-            // 
-            this.heapSortToolStripMenuItem.Name = "heapSortToolStripMenuItem";
-            this.heapSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.heapSortToolStripMenuItem.Text = "Сортировка кучей";
-            this.heapSortToolStripMenuItem.Click += new System.EventHandler(this.HeapSortToolStripMenuItem_Click);
-            // 
-            // treeSortToolStripMenuItem
-            // 
-            this.treeSortToolStripMenuItem.Name = "treeSortToolStripMenuItem";
-            this.treeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.treeSortToolStripMenuItem.Text = "Сортировка бинарным деревом";
-            this.treeSortToolStripMenuItem.Click += new System.EventHandler(this.TreeSortToolStripMenuItem_Click);
+            title4.Name = "Title1";
+            title4.Text = "Время работы";
+            this.chart2.Titles.Add(title4);
             // 
             // MainForm
             // 
@@ -302,9 +311,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.ToolStripMenuItem shellSortToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem heapSortToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem treeSortToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectionSortToolStripMenuItem;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }
