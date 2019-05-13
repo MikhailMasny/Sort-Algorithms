@@ -169,5 +169,23 @@ namespace SortAlgorithms.BL.Tests
                 Assert.AreEqual(Sorted[i], selection.Items[i]);
             }
         }
+
+        [TestMethod()]
+        public void GnomeSortTest()
+        {
+            // Arrange
+            var gnome = new GnomeSort<int>();
+
+            gnome.Items.AddRange(Items);
+
+            // Act
+            gnome.Sort();
+
+            // Assest
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], gnome.Items[i]);
+            }
+        }
     }
 }
