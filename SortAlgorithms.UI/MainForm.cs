@@ -59,6 +59,11 @@ namespace SortAlgorithms.UI
             OpenNewForm(7);
         }
 
+        private void GnomeSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenNewForm(8);
+        }
+
         #endregion
 
         private void Button2_Click(object sender, EventArgs e)
@@ -212,6 +217,13 @@ namespace SortAlgorithms.UI
                 pointsArray[4] = swapCount[6];
                 countSeries++;
             }
+
+            if (checkBox6.Checked)
+            {
+                seriesArray[5] = "Gnome";
+                pointsArray[5] = swapCount[7];
+                countSeries++;
+            }
         }
 
         private async void Button3_Click(object sender, EventArgs e)
@@ -280,6 +292,14 @@ namespace SortAlgorithms.UI
             }
             ));
 
+            algorithmsBase = new GnomeSort<int>();
+            await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
+            await Task.Run(() => richTextBox2.Invoke((Action)delegate
+            {
+                richTextBoxFill("Gnome sort", timeSpan[7], swapCount[7]);
+            }
+            ));
+
             button3.Enabled = false;  
 
             string[] seriesArray = new string[10]; // TODO: список алгоритмов
@@ -303,6 +323,6 @@ namespace SortAlgorithms.UI
         private void MainForm_Load(object sender, EventArgs e)
         {
 
-        } 
+        }
     }
 }

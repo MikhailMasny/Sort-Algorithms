@@ -64,6 +64,13 @@ namespace SortAlgorithms.UI
                     }
                     break;
 
+                case 8:
+                    {
+                        algorithmsBase = new GnomeSort<int>();
+                        this.Text = "Gnome Sort";
+                    }
+                    break;
+
                 default: { } break;
             }
         }
