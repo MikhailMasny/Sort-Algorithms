@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.видыСортировокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bubbleSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +40,7 @@
             this.heapSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectionSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gnomeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -52,13 +53,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.gnomeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.mergeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -87,7 +90,8 @@
             this.heapSortToolStripMenuItem,
             this.treeSortToolStripMenuItem,
             this.selectionSortToolStripMenuItem,
-            this.gnomeSortToolStripMenuItem});
+            this.gnomeSortToolStripMenuItem,
+            this.mergeSortToolStripMenuItem});
             this.видыСортировокToolStripMenuItem.Name = "видыСортировокToolStripMenuItem";
             this.видыСортировокToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.видыСортировокToolStripMenuItem.Text = "Виды сортировок";
@@ -141,6 +145,13 @@
             this.selectionSortToolStripMenuItem.Text = "Сортировка выбором";
             this.selectionSortToolStripMenuItem.Click += new System.EventHandler(this.SelectionSortToolStripMenuItem_Click);
             // 
+            // gnomeSortToolStripMenuItem
+            // 
+            this.gnomeSortToolStripMenuItem.Name = "gnomeSortToolStripMenuItem";
+            this.gnomeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.gnomeSortToolStripMenuItem.Text = "Гномья сортировка";
+            this.gnomeSortToolStripMenuItem.Click += new System.EventHandler(this.GnomeSortToolStripMenuItem_Click);
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(6, 19);
@@ -176,18 +187,18 @@
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(6, 19);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(348, 173);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
-            title4.Name = "Title1";
-            title4.Text = "Количество замен при использовании алгоритмов";
-            this.chart1.Titles.Add(title4);
+            title2.Name = "Title1";
+            title2.Text = "Количество замен при использовании алгоритмов";
+            this.chart1.Titles.Add(title2);
             // 
             // button3
             // 
@@ -205,7 +216,7 @@
             this.richTextBox2.Location = new System.Drawing.Point(6, 19);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(152, 277);
+            this.richTextBox2.Size = new System.Drawing.Size(152, 238);
             this.richTextBox2.TabIndex = 6;
             this.richTextBox2.Text = "";
             // 
@@ -237,7 +248,7 @@
             this.groupBox2.Controls.Add(this.richTextBox2);
             this.groupBox2.Location = new System.Drawing.Point(378, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(164, 302);
+            this.groupBox2.Size = new System.Drawing.Size(164, 263);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Информация о работе";
@@ -255,18 +266,30 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.checkBox8);
+            this.groupBox4.Controls.Add(this.checkBox7);
             this.groupBox4.Controls.Add(this.checkBox6);
             this.groupBox4.Controls.Add(this.checkBox5);
             this.groupBox4.Controls.Add(this.checkBox4);
             this.groupBox4.Controls.Add(this.checkBox3);
             this.groupBox4.Controls.Add(this.checkBox2);
             this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Location = new System.Drawing.Point(378, 335);
+            this.groupBox4.Location = new System.Drawing.Point(378, 296);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(164, 164);
+            this.groupBox4.Size = new System.Drawing.Size(164, 203);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Показывать на графике";
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(6, 134);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(126, 17);
+            this.checkBox6.TabIndex = 5;
+            this.checkBox6.Text = "Гномья сортировка";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // checkBox5
             // 
@@ -318,22 +341,32 @@
             this.checkBox1.Text = "Пузырьковая сортировка";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // gnomeSortToolStripMenuItem
+            // checkBox7
             // 
-            this.gnomeSortToolStripMenuItem.Name = "gnomeSortToolStripMenuItem";
-            this.gnomeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.gnomeSortToolStripMenuItem.Text = "Гномья сортировка";
-            this.gnomeSortToolStripMenuItem.Click += new System.EventHandler(this.GnomeSortToolStripMenuItem_Click);
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(6, 157);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(144, 17);
+            this.checkBox7.TabIndex = 6;
+            this.checkBox7.Text = "Сортировка вставками";
+            this.checkBox7.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // checkBox8
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(6, 134);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(126, 17);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "Гномья сортировка";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(6, 180);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(80, 17);
+            this.checkBox8.TabIndex = 7;
+            this.checkBox8.Text = "checkBox8";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // mergeSortToolStripMenuItem
+            // 
+            this.mergeSortToolStripMenuItem.Name = "mergeSortToolStripMenuItem";
+            this.mergeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.mergeSortToolStripMenuItem.Text = "Сортировка вставками";
+            this.mergeSortToolStripMenuItem.Click += new System.EventHandler(this.MergeSortToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -395,5 +428,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ToolStripMenuItem gnomeSortToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.ToolStripMenuItem mergeSortToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox7;
     }
 }

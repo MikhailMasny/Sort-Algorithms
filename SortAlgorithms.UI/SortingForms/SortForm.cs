@@ -71,6 +71,13 @@ namespace SortAlgorithms.UI
                     }
                     break;
 
+                case 9:
+                    {
+                        algorithmsBase = new MergeSort<int>();
+                        this.Text = "Merge Sort";
+                    }
+                    break;
+
                 default: { } break;
             }
         }

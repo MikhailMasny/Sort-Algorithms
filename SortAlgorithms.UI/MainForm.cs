@@ -64,6 +64,11 @@ namespace SortAlgorithms.UI
             OpenNewForm(8);
         }
 
+        private void MergeSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenNewForm(9);
+        }
+
         #endregion
 
         private void Button2_Click(object sender, EventArgs e)
@@ -224,6 +229,13 @@ namespace SortAlgorithms.UI
                 pointsArray[5] = swapCount[7];
                 countSeries++;
             }
+
+            if (checkBox7.Checked)
+            {
+                seriesArray[6] = "Merge";
+                pointsArray[6] = swapCount[8];
+                countSeries++;
+            }
         }
 
         private async void Button3_Click(object sender, EventArgs e)
@@ -297,6 +309,14 @@ namespace SortAlgorithms.UI
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
                 richTextBoxFill("Gnome sort", timeSpan[7], swapCount[7]);
+            }
+            ));
+
+            algorithmsBase = new MergeSort<int>();
+            await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
+            await Task.Run(() => richTextBox2.Invoke((Action)delegate
+            {
+                richTextBoxFill("Merge sort", timeSpan[8], swapCount[8]);
             }
             ));
 

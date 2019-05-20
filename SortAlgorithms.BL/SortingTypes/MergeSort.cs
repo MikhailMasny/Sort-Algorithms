@@ -93,6 +93,9 @@ namespace SortAlgorithms.BL
                 }
             }
 
+            SwapCount++;
+            ComparisonCount++;
+
             return result;
         }
     }
