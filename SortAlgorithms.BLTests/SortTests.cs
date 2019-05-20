@@ -187,5 +187,23 @@ namespace SortAlgorithms.BL.Tests
                 Assert.AreEqual(Sorted[i], gnome.Items[i]);
             }
         }
+
+        [TestMethod()]
+        public void MergeSortTest()
+        {
+            // Arrange
+            var merge = new MergeSort<int>();
+
+            merge.Items.AddRange(Items);
+
+            // Act
+            merge.Sort();
+
+            // Assest
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], merge.Items[i]);
+            }
+        }
     }
 }
