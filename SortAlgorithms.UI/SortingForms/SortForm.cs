@@ -78,6 +78,13 @@ namespace SortAlgorithms.UI
                     }
                     break;
 
+                case 10:
+                    {
+                        algorithmsBase = new QuickSort<int>();
+                        this.Text = "Quick Sort";
+                    }
+                    break;
+
                 default: { } break;
             }
         }

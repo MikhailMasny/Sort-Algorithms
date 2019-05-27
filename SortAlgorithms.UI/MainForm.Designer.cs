@@ -41,6 +41,7 @@
             this.treeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectionSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gnomeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mergeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -53,15 +54,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.mergeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quickSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -91,7 +92,8 @@
             this.treeSortToolStripMenuItem,
             this.selectionSortToolStripMenuItem,
             this.gnomeSortToolStripMenuItem,
-            this.mergeSortToolStripMenuItem});
+            this.mergeSortToolStripMenuItem,
+            this.quickSortToolStripMenuItem});
             this.видыСортировокToolStripMenuItem.Name = "видыСортировокToolStripMenuItem";
             this.видыСортировокToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.видыСортировокToolStripMenuItem.Text = "Виды сортировок";
@@ -151,6 +153,13 @@
             this.gnomeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.gnomeSortToolStripMenuItem.Text = "Гномья сортировка";
             this.gnomeSortToolStripMenuItem.Click += new System.EventHandler(this.GnomeSortToolStripMenuItem_Click);
+            // 
+            // mergeSortToolStripMenuItem
+            // 
+            this.mergeSortToolStripMenuItem.Name = "mergeSortToolStripMenuItem";
+            this.mergeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.mergeSortToolStripMenuItem.Text = "Сортировка вставками";
+            this.mergeSortToolStripMenuItem.Click += new System.EventHandler(this.MergeSortToolStripMenuItem_Click);
             // 
             // richTextBox1
             // 
@@ -281,6 +290,26 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Показывать на графике";
             // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(6, 180);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(132, 17);
+            this.checkBox8.TabIndex = 7;
+            this.checkBox8.Text = "Быстрая сортировка";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(6, 157);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(144, 17);
+            this.checkBox7.TabIndex = 6;
+            this.checkBox7.Text = "Сортировка вставками";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
@@ -341,32 +370,12 @@
             this.checkBox1.Text = "Пузырьковая сортировка";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // quickSortToolStripMenuItem
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(6, 157);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(144, 17);
-            this.checkBox7.TabIndex = 6;
-            this.checkBox7.Text = "Сортировка вставками";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(6, 180);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(80, 17);
-            this.checkBox8.TabIndex = 7;
-            this.checkBox8.Text = "checkBox8";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // mergeSortToolStripMenuItem
-            // 
-            this.mergeSortToolStripMenuItem.Name = "mergeSortToolStripMenuItem";
-            this.mergeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.mergeSortToolStripMenuItem.Text = "Сортировка вставками";
-            this.mergeSortToolStripMenuItem.Click += new System.EventHandler(this.MergeSortToolStripMenuItem_Click);
+            this.quickSortToolStripMenuItem.Name = "quickSortToolStripMenuItem";
+            this.quickSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.quickSortToolStripMenuItem.Text = "Быстрая сортировка";
+            this.quickSortToolStripMenuItem.Click += new System.EventHandler(this.QuickSortToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -431,5 +440,6 @@
         private System.Windows.Forms.ToolStripMenuItem mergeSortToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.ToolStripMenuItem quickSortToolStripMenuItem;
     }
 }

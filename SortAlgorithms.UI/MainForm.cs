@@ -69,6 +69,11 @@ namespace SortAlgorithms.UI
             OpenNewForm(9);
         }
 
+        private void QuickSortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenNewForm(10);
+        }
+
         #endregion
 
         private void Button2_Click(object sender, EventArgs e)
@@ -236,6 +241,13 @@ namespace SortAlgorithms.UI
                 pointsArray[6] = swapCount[8];
                 countSeries++;
             }
+
+            if (checkBox8.Checked)
+            {
+                seriesArray[7] = "Quick";
+                pointsArray[7] = swapCount[9];
+                countSeries++;
+            }
         }
 
         private async void Button3_Click(object sender, EventArgs e)
@@ -317,6 +329,14 @@ namespace SortAlgorithms.UI
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
                 richTextBoxFill("Merge sort", timeSpan[8], swapCount[8]);
+            }
+            ));
+
+            algorithmsBase = new QuickSort<int>();
+            await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
+            await Task.Run(() => richTextBox2.Invoke((Action)delegate
+            {
+                richTextBoxFill("Quick sort", timeSpan[9], swapCount[9]);
             }
             ));
 
