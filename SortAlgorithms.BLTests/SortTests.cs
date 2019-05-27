@@ -205,5 +205,23 @@ namespace SortAlgorithms.BL.Tests
                 Assert.AreEqual(Sorted[i], merge.Items[i]);
             }
         }
+
+        [TestMethod()]
+        public void QuickSortTest()
+        {
+            // Arrange
+            var quick = new QuickSort<int>();
+
+            quick.Items.AddRange(Items);
+
+            // Act
+            quick.Sort();
+
+            // Assest
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], quick.Items[i]);
+            }
+        }
     }
 }
