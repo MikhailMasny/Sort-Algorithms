@@ -6,7 +6,7 @@ namespace SortAlgorithms.BL
     /// <summary>
     /// Сортировка выбором.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">Обобщение.</typeparam>
     public class SelectionSort<T> : AlgorithmsBase<T> where T : IComparable
     {
         /// <summary>
