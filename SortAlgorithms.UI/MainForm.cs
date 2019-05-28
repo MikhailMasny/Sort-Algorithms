@@ -116,7 +116,7 @@ namespace SortAlgorithms.UI
                 if(fileContent != null && fileContent != "")
                 {
                     richTextBox1.Text = fileContent;
-                    MessageBox.Show("Файл успешно считан!", "Результат операции", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("File successfully read!", "Operation result", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     button1.Enabled = false;
                     button4.Enabled = false;
@@ -124,7 +124,7 @@ namespace SortAlgorithms.UI
                 }
                 else
                 {
-                    MessageBox.Show("Выбранный файл пуст!", "Результат операции", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The selected file is empty!", "Operation result", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -154,8 +154,6 @@ namespace SortAlgorithms.UI
             button3.Enabled = true;
         }
 
-
-        // TODO: Рефракторинг + в публичный
         private void richTextBoxParser(List<int> Items)
         {
             string[] words = richTextBox1.Text.Split(' ');
@@ -184,67 +182,65 @@ namespace SortAlgorithms.UI
         private void richTextBoxFill(string algorithmName, TimeSpan timeSpan, int swapCount)
         {
             richTextBox2.Text += algorithmName + "\n";
-            richTextBox2.Text += $"Время: {timeSpan} \n";
-            richTextBox2.Text += $"Количество замен: {swapCount} \n";
+            richTextBox2.Text += $"Time: {timeSpan} \n";
+            richTextBox2.Text += $"Number of replacements: {swapCount} \n";
             richTextBox2.Text += $"\n";
         }
 
-        // { "Bubble", "Coctail", "Insert", "Shell", "Heap", "Tree", "Selection" }
-        // { swapCount[0], swapCount[1], swapCount[2], swapCount[3], swapCount[4], swapCount[5], swapCount[6] }
         private void checkBoxCheckedAll(ref int countSeries, string[] seriesArray, int[] pointsArray, List<int> swapCount)
         {
             if (checkBox1.Checked)
             {
-                seriesArray[0] = "Bubble";
+                seriesArray[0] = Constants.BubbleSort;
                 pointsArray[0] = swapCount[0];
                 countSeries++;
             }
 
             if (checkBox2.Checked)
             {
-                seriesArray[1] = "Coctail";
+                seriesArray[1] = Constants.CoctailSort;
                 pointsArray[1] = swapCount[1];
                 countSeries++;
             }
 
             if (checkBox3.Checked)
             {
-                seriesArray[2] = "Insert";
+                seriesArray[2] = Constants.InsertionSort;
                 pointsArray[2] = swapCount[2];
                 countSeries++;
             }
 
             if (checkBox4.Checked)
             {
-                seriesArray[3] = "Shell";
+                seriesArray[3] = Constants.ShellSort;
                 pointsArray[3] = swapCount[3];
                 countSeries++;
             }
 
             if (checkBox5.Checked)
             {
-                seriesArray[4] = "Selection";
+                seriesArray[4] = Constants.SelectionSort;
                 pointsArray[4] = swapCount[6];
                 countSeries++;
             }
 
             if (checkBox6.Checked)
             {
-                seriesArray[5] = "Gnome";
+                seriesArray[5] = Constants.GnomeSort;
                 pointsArray[5] = swapCount[7];
                 countSeries++;
             }
 
             if (checkBox7.Checked)
             {
-                seriesArray[6] = "Merge";
+                seriesArray[6] = Constants.MergeSort;
                 pointsArray[6] = swapCount[8];
                 countSeries++;
             }
 
             if (checkBox8.Checked)
             {
-                seriesArray[7] = "Quick";
+                seriesArray[7] = Constants.QuickSort;
                 pointsArray[7] = swapCount[9];
                 countSeries++;
             }
@@ -253,17 +249,19 @@ namespace SortAlgorithms.UI
         private async void Button3_Click(object sender, EventArgs e)
         { 
             AlgorithmsBase<int> algorithmsBase = null;
-            List<int> Items = new List<int>();
-            List<TimeSpan> timeSpan = new List<TimeSpan>();
-            List<int> swapCount = new List<int>();
+            var Items = new List<int>();
+            var timeSpan = new List<TimeSpan>();
+            var swapCount = new List<int>();
 
             richTextBoxParser(Items);
+
+            #region Методы для вычисления сортировок.
 
             algorithmsBase = new BubbleSort<int>();
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Bubble sort", timeSpan[0], swapCount[0]);
+                richTextBoxFill(Constants.BubbleSort, timeSpan[0], swapCount[0]);
             }
             ));
 
@@ -271,7 +269,7 @@ namespace SortAlgorithms.UI
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Coctail sort", timeSpan[1], swapCount[1]);
+                richTextBoxFill(Constants.CoctailSort, timeSpan[1], swapCount[1]);
             }
             ));
 
@@ -279,7 +277,7 @@ namespace SortAlgorithms.UI
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Insert sort", timeSpan[2], swapCount[2]);
+                richTextBoxFill(Constants.InsertionSort, timeSpan[2], swapCount[2]);
             }
             ));
 
@@ -287,16 +285,15 @@ namespace SortAlgorithms.UI
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Shell sort", timeSpan[3], swapCount[3]);
+                richTextBoxFill(Constants.ShellSort, timeSpan[3], swapCount[3]);
             }
             ));
 
-            // TODO: Добавить swapCount для Heap и Tree сортировок.
             algorithmsBase = new HeapSort<int>();
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Heap sort", timeSpan[4], swapCount[4]);
+                richTextBoxFill(Constants.HeapSort, timeSpan[4], swapCount[4]);
             }
             ));
 
@@ -304,7 +301,7 @@ namespace SortAlgorithms.UI
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Tree sort", timeSpan[5], swapCount[5]);
+                richTextBoxFill(Constants.TreeSort, timeSpan[5], swapCount[5]);
             }
             ));
 
@@ -312,7 +309,7 @@ namespace SortAlgorithms.UI
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Selection sort", timeSpan[6], swapCount[6]);
+                richTextBoxFill(Constants.SelectionSort, timeSpan[6], swapCount[6]);
             }
             ));
 
@@ -320,7 +317,7 @@ namespace SortAlgorithms.UI
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Gnome sort", timeSpan[7], swapCount[7]);
+                richTextBoxFill(Constants.GnomeSort, timeSpan[7], swapCount[7]);
             }
             ));
 
@@ -328,7 +325,7 @@ namespace SortAlgorithms.UI
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Merge sort", timeSpan[8], swapCount[8]);
+                richTextBoxFill(Constants.MergeSort, timeSpan[8], swapCount[8]);
             }
             ));
 
@@ -336,14 +333,16 @@ namespace SortAlgorithms.UI
             await Task.Run(() => AnalysisAlgorithm(algorithmsBase, Items, timeSpan, swapCount));
             await Task.Run(() => richTextBox2.Invoke((Action)delegate
             {
-                richTextBoxFill("Quick sort", timeSpan[9], swapCount[9]);
+                richTextBoxFill(Constants.QuickSort, timeSpan[9], swapCount[9]);
             }
             ));
 
+            #endregion
+
             button3.Enabled = false;  
 
-            string[] seriesArray = new string[10]; // TODO: список алгоритмов
-            int[] pointsArray = new int[10]; // TODO: значения от сортировок
+            string[] seriesArray = new string[10]; 
+            int[] pointsArray = new int[10]; 
 
             chart1.Series.Clear();
             var countSeries = 0;
