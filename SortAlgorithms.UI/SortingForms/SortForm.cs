@@ -18,70 +18,70 @@ namespace SortAlgorithms.UI
                 case 1:
                     {
                         algorithmsBase = new BubbleSort<int>();
-                        this.Text = "Bubble Sort";
+                        this.Text = Constants.BubbleSort;
                     }
                     break;
 
                 case 2:
                     {
                         algorithmsBase = new CoctailSort<int>();
-                        this.Text = "Coctail Sort";
+                        this.Text = Constants.CoctailSort;
                     }
                     break;
 
                 case 3:
                     {
                         algorithmsBase = new InsertSort<int>();
-                        this.Text = "Insertion Sort";
+                        this.Text = Constants.InsertionSort;
                     }
                     break;
 
                 case 4:
                     {
                         algorithmsBase = new ShellSort<int>();
-                        this.Text = "Shell Sort";
+                        this.Text = Constants.ShellSort;
                     }
                     break;
 
                 case 5:
                     {
                         algorithmsBase = new HeapSort<int>();
-                        this.Text = "Heap Sort";
+                        this.Text = Constants.HeapSort;
                     }
                     break;
 
                 case 6:
                     {
                         algorithmsBase = new TreeSort<int>();
-                        this.Text = "Tree Sort";
+                        this.Text = Constants.TreeSort;
                     }
                     break;
 
                 case 7:
                     {
                         algorithmsBase = new SelectionSort<int>();
-                        this.Text = "Selection Sort";
+                        this.Text = Constants.SelectionSort;
                     }
                     break;
 
                 case 8:
                     {
                         algorithmsBase = new GnomeSort<int>();
-                        this.Text = "Gnome Sort";
+                        this.Text = Constants.GnomeSort;
                     }
                     break;
 
                 case 9:
                     {
                         algorithmsBase = new MergeSort<int>();
-                        this.Text = "Merge Sort";
+                        this.Text = Constants.MergeSort;
                     }
                     break;
 
                 case 10:
                     {
                         algorithmsBase = new QuickSort<int>();
-                        this.Text = "Quick Sort";
+                        this.Text = Constants.QuickSort;
                     }
                     break;
 
