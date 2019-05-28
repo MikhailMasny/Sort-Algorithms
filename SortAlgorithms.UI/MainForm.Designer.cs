@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.видыСортировокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bubbleSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +43,7 @@
             this.selectionSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gnomeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mergeSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quickSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,7 +64,6 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.quickSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -73,16 +74,14 @@
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.видыСортировокToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(554, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // видыСортировокToolStripMenuItem
             // 
+            resources.ApplyResources(this.видыСортировокToolStripMenuItem, "видыСортировокToolStripMenuItem");
             this.видыСортировокToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bubbleSortToolStripMenuItem,
             this.шейкернаяСортировкаToolStripMenuItem,
@@ -95,186 +94,152 @@
             this.mergeSortToolStripMenuItem,
             this.quickSortToolStripMenuItem});
             this.видыСортировокToolStripMenuItem.Name = "видыСортировокToolStripMenuItem";
-            this.видыСортировокToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
-            this.видыСортировокToolStripMenuItem.Text = "Виды сортировок";
             // 
             // bubbleSortToolStripMenuItem
             // 
+            resources.ApplyResources(this.bubbleSortToolStripMenuItem, "bubbleSortToolStripMenuItem");
             this.bubbleSortToolStripMenuItem.Name = "bubbleSortToolStripMenuItem";
-            this.bubbleSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.bubbleSortToolStripMenuItem.Text = "Пузырьковая сортировка";
             this.bubbleSortToolStripMenuItem.Click += new System.EventHandler(this.BubbleSortToolStripMenuItem_Click);
             // 
             // шейкернаяСортировкаToolStripMenuItem
             // 
+            resources.ApplyResources(this.шейкернаяСортировкаToolStripMenuItem, "шейкернаяСортировкаToolStripMenuItem");
             this.шейкернаяСортировкаToolStripMenuItem.Name = "шейкернаяСортировкаToolStripMenuItem";
-            this.шейкернаяСортировкаToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.шейкернаяСортировкаToolStripMenuItem.Text = "Шейкерная сортировка";
             this.шейкернаяСортировкаToolStripMenuItem.Click += new System.EventHandler(this.ШейкернаяСортировкаToolStripMenuItem_Click);
             // 
             // insertionSortToolStripMenuItem
             // 
+            resources.ApplyResources(this.insertionSortToolStripMenuItem, "insertionSortToolStripMenuItem");
             this.insertionSortToolStripMenuItem.Name = "insertionSortToolStripMenuItem";
-            this.insertionSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.insertionSortToolStripMenuItem.Text = "Сортировка вставками";
             this.insertionSortToolStripMenuItem.Click += new System.EventHandler(this.InsertionSortToolStripMenuItem_Click);
             // 
             // shellSortToolStripMenuItem
             // 
+            resources.ApplyResources(this.shellSortToolStripMenuItem, "shellSortToolStripMenuItem");
             this.shellSortToolStripMenuItem.Name = "shellSortToolStripMenuItem";
-            this.shellSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.shellSortToolStripMenuItem.Text = "Сортировка Шелла";
             this.shellSortToolStripMenuItem.Click += new System.EventHandler(this.ShellSortToolStripMenuItem_Click);
             // 
             // heapSortToolStripMenuItem
             // 
+            resources.ApplyResources(this.heapSortToolStripMenuItem, "heapSortToolStripMenuItem");
             this.heapSortToolStripMenuItem.Name = "heapSortToolStripMenuItem";
-            this.heapSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.heapSortToolStripMenuItem.Text = "Сортировка кучей";
             this.heapSortToolStripMenuItem.Click += new System.EventHandler(this.HeapSortToolStripMenuItem_Click);
             // 
             // treeSortToolStripMenuItem
             // 
+            resources.ApplyResources(this.treeSortToolStripMenuItem, "treeSortToolStripMenuItem");
             this.treeSortToolStripMenuItem.Name = "treeSortToolStripMenuItem";
-            this.treeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.treeSortToolStripMenuItem.Text = "Сортировка бинарным деревом";
             this.treeSortToolStripMenuItem.Click += new System.EventHandler(this.TreeSortToolStripMenuItem_Click);
             // 
             // selectionSortToolStripMenuItem
             // 
+            resources.ApplyResources(this.selectionSortToolStripMenuItem, "selectionSortToolStripMenuItem");
             this.selectionSortToolStripMenuItem.Name = "selectionSortToolStripMenuItem";
-            this.selectionSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.selectionSortToolStripMenuItem.Text = "Сортировка выбором";
             this.selectionSortToolStripMenuItem.Click += new System.EventHandler(this.SelectionSortToolStripMenuItem_Click);
             // 
             // gnomeSortToolStripMenuItem
             // 
+            resources.ApplyResources(this.gnomeSortToolStripMenuItem, "gnomeSortToolStripMenuItem");
             this.gnomeSortToolStripMenuItem.Name = "gnomeSortToolStripMenuItem";
-            this.gnomeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.gnomeSortToolStripMenuItem.Text = "Гномья сортировка";
             this.gnomeSortToolStripMenuItem.Click += new System.EventHandler(this.GnomeSortToolStripMenuItem_Click);
             // 
             // mergeSortToolStripMenuItem
             // 
+            resources.ApplyResources(this.mergeSortToolStripMenuItem, "mergeSortToolStripMenuItem");
             this.mergeSortToolStripMenuItem.Name = "mergeSortToolStripMenuItem";
-            this.mergeSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.mergeSortToolStripMenuItem.Text = "Сортировка вставками";
             this.mergeSortToolStripMenuItem.Click += new System.EventHandler(this.MergeSortToolStripMenuItem_Click);
+            // 
+            // quickSortToolStripMenuItem
+            // 
+            resources.ApplyResources(this.quickSortToolStripMenuItem, "quickSortToolStripMenuItem");
+            this.quickSortToolStripMenuItem.Name = "quickSortToolStripMenuItem";
+            this.quickSortToolStripMenuItem.Click += new System.EventHandler(this.QuickSortToolStripMenuItem_Click);
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(348, 168);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(184, 193);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Загрузить данные с файла";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 193);
+            resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Очистить";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.chart1, "chart1");
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(348, 173);
-            this.chart1.TabIndex = 4;
-            this.chart1.Text = "chart1";
-            title2.Name = "Title1";
-            title2.Text = "Количество замен при использовании алгоритмов";
-            this.chart1.Titles.Add(title2);
+            title1.Name = "Title1";
+            title1.Text = "Number of replacements when using algorithms";
+            this.chart1.Titles.Add(title1);
             // 
             // button3
             // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(6, 198);
+            resources.ApplyResources(this.button3, "button3");
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(348, 40);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Запустить все ";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.richTextBox2, "richTextBox2");
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(152, 238);
-            this.richTextBox2.TabIndex = 6;
-            this.richTextBox2.Text = "";
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 222);
-            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Начальные данные";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(87, 193);
+            resources.ApplyResources(this.button4, "button4");
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Случ. знач.";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.richTextBox2);
-            this.groupBox2.Location = new System.Drawing.Point(378, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(164, 263);
-            this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Информация о работе";
             // 
             // groupBox3
             // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.chart1);
             this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Location = new System.Drawing.Point(12, 255);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(360, 244);
-            this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "График";
             // 
             // groupBox4
             // 
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.checkBox8);
             this.groupBox4.Controls.Add(this.checkBox7);
             this.groupBox4.Controls.Add(this.checkBox6);
@@ -283,105 +248,61 @@
             this.groupBox4.Controls.Add(this.checkBox3);
             this.groupBox4.Controls.Add(this.checkBox2);
             this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Location = new System.Drawing.Point(378, 296);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(164, 203);
-            this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Показывать на графике";
             // 
             // checkBox8
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(6, 180);
+            resources.ApplyResources(this.checkBox8, "checkBox8");
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(132, 17);
-            this.checkBox8.TabIndex = 7;
-            this.checkBox8.Text = "Быстрая сортировка";
             this.checkBox8.UseVisualStyleBackColor = true;
             // 
             // checkBox7
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(6, 157);
+            resources.ApplyResources(this.checkBox7, "checkBox7");
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(144, 17);
-            this.checkBox7.TabIndex = 6;
-            this.checkBox7.Text = "Сортировка вставками";
             this.checkBox7.UseVisualStyleBackColor = true;
             // 
             // checkBox6
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(6, 134);
+            resources.ApplyResources(this.checkBox6, "checkBox6");
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(126, 17);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "Гномья сортировка";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // checkBox5
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(6, 111);
+            resources.ApplyResources(this.checkBox5, "checkBox5");
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(135, 17);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Сортировка выбором";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // checkBox4
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(6, 88);
+            resources.ApplyResources(this.checkBox4, "checkBox4");
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(122, 17);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Сортировка Шелла";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 65);
+            resources.ApplyResources(this.checkBox3, "checkBox3");
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(144, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Сортировка вставками";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 42);
+            resources.ApplyResources(this.checkBox2, "checkBox2");
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(145, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Шейкерная сортировка";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.checkBox1, "checkBox1");
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(157, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Пузырьковая сортировка";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // quickSortToolStripMenuItem
-            // 
-            this.quickSortToolStripMenuItem.Name = "quickSortToolStripMenuItem";
-            this.quickSortToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.quickSortToolStripMenuItem.Text = "Быстрая сортировка";
-            this.quickSortToolStripMenuItem.Click += new System.EventHandler(this.QuickSortToolStripMenuItem_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 511);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -392,7 +313,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -13,6 +13,10 @@ namespace SortAlgorithms.UI
     {
         public MainForm()
         {
+            // Принудительное переключение на en-US.
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            //System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+
             InitializeComponent();
         }
 
@@ -361,7 +365,7 @@ namespace SortAlgorithms.UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            this.Text = "App моё";
         }
     }
 }

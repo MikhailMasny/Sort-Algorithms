@@ -4,9 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// TODO LIST
-// Добавить локализацию
-
 namespace SortAlgorithms.UI
 {
     static class Program
