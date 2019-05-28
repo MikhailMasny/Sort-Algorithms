@@ -365,7 +365,7 @@ namespace SortAlgorithms.UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.Text = "App моё";
+            this.Text = "Sort Algorithms v1.0";
         }
     }
 }
