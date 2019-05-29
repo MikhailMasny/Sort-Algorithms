@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.видыСортировокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bubbleSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,14 +74,13 @@
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.видыСортировокToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // видыСортировокToolStripMenuItem
             // 
-            resources.ApplyResources(this.видыСортировокToolStripMenuItem, "видыСортировокToolStripMenuItem");
             this.видыСортировокToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bubbleSortToolStripMenuItem,
             this.шейкернаяСортировкаToolStripMenuItem,
@@ -94,65 +93,66 @@
             this.mergeSortToolStripMenuItem,
             this.quickSortToolStripMenuItem});
             this.видыСортировокToolStripMenuItem.Name = "видыСортировокToolStripMenuItem";
+            resources.ApplyResources(this.видыСортировокToolStripMenuItem, "видыСортировокToolStripMenuItem");
             // 
             // bubbleSortToolStripMenuItem
             // 
-            resources.ApplyResources(this.bubbleSortToolStripMenuItem, "bubbleSortToolStripMenuItem");
             this.bubbleSortToolStripMenuItem.Name = "bubbleSortToolStripMenuItem";
+            resources.ApplyResources(this.bubbleSortToolStripMenuItem, "bubbleSortToolStripMenuItem");
             this.bubbleSortToolStripMenuItem.Click += new System.EventHandler(this.BubbleSortToolStripMenuItem_Click);
             // 
             // шейкернаяСортировкаToolStripMenuItem
             // 
-            resources.ApplyResources(this.шейкернаяСортировкаToolStripMenuItem, "шейкернаяСортировкаToolStripMenuItem");
             this.шейкернаяСортировкаToolStripMenuItem.Name = "шейкернаяСортировкаToolStripMenuItem";
+            resources.ApplyResources(this.шейкернаяСортировкаToolStripMenuItem, "шейкернаяСортировкаToolStripMenuItem");
             this.шейкернаяСортировкаToolStripMenuItem.Click += new System.EventHandler(this.ШейкернаяСортировкаToolStripMenuItem_Click);
             // 
             // insertionSortToolStripMenuItem
             // 
-            resources.ApplyResources(this.insertionSortToolStripMenuItem, "insertionSortToolStripMenuItem");
             this.insertionSortToolStripMenuItem.Name = "insertionSortToolStripMenuItem";
+            resources.ApplyResources(this.insertionSortToolStripMenuItem, "insertionSortToolStripMenuItem");
             this.insertionSortToolStripMenuItem.Click += new System.EventHandler(this.InsertionSortToolStripMenuItem_Click);
             // 
             // shellSortToolStripMenuItem
             // 
-            resources.ApplyResources(this.shellSortToolStripMenuItem, "shellSortToolStripMenuItem");
             this.shellSortToolStripMenuItem.Name = "shellSortToolStripMenuItem";
+            resources.ApplyResources(this.shellSortToolStripMenuItem, "shellSortToolStripMenuItem");
             this.shellSortToolStripMenuItem.Click += new System.EventHandler(this.ShellSortToolStripMenuItem_Click);
             // 
             // heapSortToolStripMenuItem
             // 
-            resources.ApplyResources(this.heapSortToolStripMenuItem, "heapSortToolStripMenuItem");
             this.heapSortToolStripMenuItem.Name = "heapSortToolStripMenuItem";
+            resources.ApplyResources(this.heapSortToolStripMenuItem, "heapSortToolStripMenuItem");
             this.heapSortToolStripMenuItem.Click += new System.EventHandler(this.HeapSortToolStripMenuItem_Click);
             // 
             // treeSortToolStripMenuItem
             // 
-            resources.ApplyResources(this.treeSortToolStripMenuItem, "treeSortToolStripMenuItem");
             this.treeSortToolStripMenuItem.Name = "treeSortToolStripMenuItem";
+            resources.ApplyResources(this.treeSortToolStripMenuItem, "treeSortToolStripMenuItem");
             this.treeSortToolStripMenuItem.Click += new System.EventHandler(this.TreeSortToolStripMenuItem_Click);
             // 
             // selectionSortToolStripMenuItem
             // 
-            resources.ApplyResources(this.selectionSortToolStripMenuItem, "selectionSortToolStripMenuItem");
             this.selectionSortToolStripMenuItem.Name = "selectionSortToolStripMenuItem";
+            resources.ApplyResources(this.selectionSortToolStripMenuItem, "selectionSortToolStripMenuItem");
             this.selectionSortToolStripMenuItem.Click += new System.EventHandler(this.SelectionSortToolStripMenuItem_Click);
             // 
             // gnomeSortToolStripMenuItem
             // 
-            resources.ApplyResources(this.gnomeSortToolStripMenuItem, "gnomeSortToolStripMenuItem");
             this.gnomeSortToolStripMenuItem.Name = "gnomeSortToolStripMenuItem";
+            resources.ApplyResources(this.gnomeSortToolStripMenuItem, "gnomeSortToolStripMenuItem");
             this.gnomeSortToolStripMenuItem.Click += new System.EventHandler(this.GnomeSortToolStripMenuItem_Click);
             // 
             // mergeSortToolStripMenuItem
             // 
-            resources.ApplyResources(this.mergeSortToolStripMenuItem, "mergeSortToolStripMenuItem");
             this.mergeSortToolStripMenuItem.Name = "mergeSortToolStripMenuItem";
+            resources.ApplyResources(this.mergeSortToolStripMenuItem, "mergeSortToolStripMenuItem");
             this.mergeSortToolStripMenuItem.Click += new System.EventHandler(this.MergeSortToolStripMenuItem_Click);
             // 
             // quickSortToolStripMenuItem
             // 
-            resources.ApplyResources(this.quickSortToolStripMenuItem, "quickSortToolStripMenuItem");
             this.quickSortToolStripMenuItem.Name = "quickSortToolStripMenuItem";
+            resources.ApplyResources(this.quickSortToolStripMenuItem, "quickSortToolStripMenuItem");
             this.quickSortToolStripMenuItem.Click += new System.EventHandler(this.QuickSortToolStripMenuItem_Click);
             // 
             // richTextBox1
@@ -178,19 +178,18 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // chart1
             // 
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             resources.ApplyResources(this.chart1, "chart1");
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
             this.chart1.Name = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Number of replacements when using algorithms";
-            this.chart1.Titles.Add(title1);
+            title3.Name = "Title1";
+            title3.Text = "Number of replacements when using algorithms";
+            this.chart1.Titles.Add(title3);
             // 
             // button3
             // 
@@ -207,11 +206,11 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button2);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -224,22 +223,21 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.richTextBox2);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.chart1);
             this.groupBox3.Controls.Add(this.button3);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
             // groupBox4
             // 
-            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.checkBox8);
             this.groupBox4.Controls.Add(this.checkBox7);
             this.groupBox4.Controls.Add(this.checkBox6);
@@ -248,6 +246,7 @@
             this.groupBox4.Controls.Add(this.checkBox3);
             this.groupBox4.Controls.Add(this.checkBox2);
             this.groupBox4.Controls.Add(this.checkBox1);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
